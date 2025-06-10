@@ -1,6 +1,6 @@
 /*
-Roland VariOS hardware supports a `VPI-01 for VariOS.BIN` the full Roland
-VSynth VA (Virtual Analogue) synth engine, albeit monotimbral single part.
+VariOS hardware supports a `VPI-01 for VariOS.BIN` the full VSynth VA 
+(Virtual Analogue) synth engine, albeit monotimbral single part.
 
 Patches with PCM SAMPLED or VARIPHRASE waveforms appear silent on VariOS
 (unless you use my `wakeup` tool here).
