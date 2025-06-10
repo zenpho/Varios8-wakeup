@@ -5,8 +5,6 @@ Wake up patches from VSynth engine for use with Varios8
 
 Roland VariOS hardware supports a `VPI-01 for VariOS.BIN` mode, marketed as a virtual Jupiter8 with MacOS9 editor, this is actually the full Roland VSynth VA (Virtual Analogue) engine, a monotimbral single part, single channel. 
 
-![roland varios8 software editor](images/varios8SW.png)
-
 Any `.p00` file from a VSynth is compatibile with a few quirks here. Notably:
 
 1. Any configured PCM SAMPLED or VARIPHRASE waveform is silenced (unless you use my `wakeup` tool here).
@@ -14,6 +12,8 @@ Any `.p00` file from a VSynth is compatibile with a few quirks here. Notably:
 2. Few System Exclusive parameters map 1-to-1 onto the Jupiter8 MacOS9 editor but some do. The most useful mappings are listed below.
 
 3. Multiple 'project' folders require the `V-Synth Project.ini` format described below.
+
+![roland varios8 software editor](images/varios8SW.png)
 
 # Wakeup!
 
@@ -23,8 +23,10 @@ It simply sets byte 273 and byte 306 (two sound sources set to VA mode).
 
 Usage is typically with a batch process for all files in a 'PRJ' folder, e.g.
 
+```
 $ cd /path/to/wakeup
 $ for i in path/to/library.prj/Patches/*.P00 do; echo "$i"; ./wakeup "$i"; done;
+```
 
 # System Exclusive and control messages
 
@@ -39,7 +41,6 @@ When the VariOS hardware is running `VPI-01 for VariOS.BIN` it will parse a few 
 |sync int/ext  | nn = 0,1 | F0 41 10 00 6D 12 01 00 00 07 nn cs F7 | 78, 77 |
 |arpeg on/off  | nn = 0,1 | F0 41 10 00 6D 12 10 00 00 20 nn cs F7 | 50, 4F |
 
-|--------|-----------|
 |midi cc#|description|
 |--------|-----------|
 |CC1     |Modulation |
@@ -62,7 +63,6 @@ When the VariOS hardware is running `VPI-01 for VariOS.BIN` it will parse a few 
 |CC83    |   .       |
 |CC91    |CHORUS FX  |
 |CC93    |REVERB FX  |
-|--------|-----------|
 
 # Project folders
 
