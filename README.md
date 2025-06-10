@@ -5,7 +5,7 @@ Wake up patches from VSynth engine for use with Varios8
 
 Roland VariOS hardware supports a `VPI-01 for VariOS.BIN` mode, marketed as a virtual Jupiter8 with MacOS9 editor, this is actually the full Roland VSynth VA (Virtual Analogue) engine, a monotimbral single part, single channel. 
 
-![roland varios8 software editor](images/variosSW.png)
+![roland varios8 software editor](images/varios8SW.png)
 
 Any `.p00` file from a VSynth is compatibile with a few quirks here. Notably:
 
